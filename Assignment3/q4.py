@@ -1,6 +1,5 @@
 import data
 import numpy as np
-# Import pyplot - plt.imshow is useful!
 import matplotlib.pyplot as plt
 
 def compute_mean_mles(train_data, train_labels):
