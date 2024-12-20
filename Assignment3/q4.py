@@ -5,9 +5,8 @@ import matplotlib.pyplot as plt
 def compute_mean_mles(train_data, train_labels):
     '''
     Compute the mean estimate for each digit class
-
     Should return a numpy array of size (10,64)
-    The ith row will correspond to the mean estimate for digit class i
+    The i-th row will correspond to the mean estimate for digit class i
     '''
     means = np.zeros((10, 64))
     return means
@@ -15,7 +14,6 @@ def compute_mean_mles(train_data, train_labels):
 def compute_sigma_mles(train_data, train_labels):
     '''
     Compute the covariance estimate for each digit class
-
     Should return a three dimensional numpy array of shape (10, 64, 64)
     consisting of a covariance matrix for each digit class
     '''
@@ -26,7 +24,6 @@ def generative_likelihood(digits, means, covariances):
     '''
     Compute the generative log-likelihood:
         log p(x|y,mu,Sigma)
-
     Should return an n x 10 numpy array
     '''
     return None
@@ -34,9 +31,7 @@ def generative_likelihood(digits, means, covariances):
 def conditional_likelihood(digits, means, covariances):
     '''
     Compute the conditional likelihood:
-
         log p(y|x, mu, Sigma)
-
     This should be a numpy array of shape (n, 10)
     Where n is the number of datapoints and 10 corresponds to each digit class
     '''
@@ -45,9 +40,7 @@ def conditional_likelihood(digits, means, covariances):
 def avg_conditional_likelihood(digits, labels, means, covariances):
     '''
     Compute the average conditional likelihood over the true class labels
-
-        AVG( log p(y_i|x_i, mu, Sigma) )
-
+        avg(log p(y_i|x_i, mu, Sigma))
     i.e. the average log likelihood that the model assigns to the correct class label
     '''
     cond_likelihood = conditional_likelihood(digits, means, covariances)
