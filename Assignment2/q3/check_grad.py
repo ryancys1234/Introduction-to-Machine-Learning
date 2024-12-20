@@ -1,6 +1,4 @@
-import numpy as np
-import numpy.linalg as LA
-
+import numpy as np, numpy.linalg as LA
 
 def check_grad(func, X, epsilon, *args):
     """ Checks the derivatives in a function, by comparing them to finite
