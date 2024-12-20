@@ -1,6 +1,6 @@
 from check_grad import check_grad
-from utils import *
 from logistic import *
+from utils import *
 import matplotlib.pyplot as plt, numpy as np
 
 def run_logistic_regression():
