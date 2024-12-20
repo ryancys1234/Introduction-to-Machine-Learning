@@ -16,7 +16,6 @@ def evaluate(targets, y):
         y_i = y[i]
         sum -= t*np.log(y_i)
         sum -= (1-t)*np.log(1-y_i)
-    
     ce = float(sum / N)
     frac_correct = np.mean([int( targets[i] == int(y[i] >= 0.5) ) for i in range(N)]))
     
