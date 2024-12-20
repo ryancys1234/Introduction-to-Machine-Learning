@@ -35,9 +35,4 @@ def logistic(weights, data, targets, hyperparameters):
     X = np.c_[data, np.ones(N)] # Adds the dummy feature to the data for bias
     f = evaluate(targets, y)[0] # The averaged cross entropy loss
     df = (1/N)*X.T.dot([y_i - t_i for y_i, t_i in zip(y, targets)])
-    return (f, df, y)
-    
-    #####################################################################
-    #                       END OF YOUR CODE                            #
-    #####################################################################
     return f, df, y
