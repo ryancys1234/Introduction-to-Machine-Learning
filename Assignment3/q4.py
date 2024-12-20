@@ -10,7 +10,6 @@ def compute_mean_mles(train_data, train_labels):
     The ith row will correspond to the mean estimate for digit class i
     '''
     means = np.zeros((10, 64))
-    # Compute means
     return means
 
 def compute_sigma_mles(train_data, train_labels):
@@ -21,7 +20,6 @@ def compute_sigma_mles(train_data, train_labels):
     consisting of a covariance matrix for each digit class
     '''
     covariances = np.zeros((10, 64, 64))
-    # Compute covariances
     return covariances
 
 def generative_likelihood(digits, means, covariances):
