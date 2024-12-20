@@ -7,13 +7,11 @@ def run_logistic_regression():
     train_inputs, train_targets = load_train()
     valid_inputs, valid_targets = load_valid()
     N, M = train_inputs.shape
-
     hyperparameters = {
         "learning_rate": 0.1,
         "weight_regularization": 0.,
         "num_iterations": 1000
     }
-    
     weights = np.zeros((M + 1, 1))
     train_ce = []; valid_ce = []
     
