@@ -30,7 +30,6 @@ def main():
     train_data = load_train_csv("../data")
     val_data = load_valid_csv("../data")
     test_data = load_public_test_csv("../data")
-    
     lr = 0.01; n_i = 12
     
     pred_lst_val = []
