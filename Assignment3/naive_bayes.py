@@ -85,7 +85,7 @@ def train_map_estimator(train_images, train_labels):
 
 def log_likelihood(images, theta, pi):
     p_x = np.dot(images, np.log(theta)) + np.dot((1-images), np.log(1-theta))
-    log_like = p_x - np.log(np.dot(pi, np.exp(p_x).T))[:,np.newaxis] + np.log(pi)
+    log_like = p_x - np.log(np.dot(pi, np.exp(p_x).T))[:, np.newaxis] + np.log(pi)
     return log_like
 
 def predict(log_like):
@@ -106,13 +106,13 @@ def main():
     theta_mle, pi_mle = train_mle_estimator(train_images, train_labels)
     theta_map, pi_map = train_map_estimator(train_images, train_labels)
 
-    # loglike_train_mle = log_likelihood(train_images, theta_mle, pi_mle)
+    loglike_train_mle = log_likelihood(train_images, theta_mle, pi_mle)
     loglike_train_map = log_likelihood(train_images, theta_map, pi_map)
 
-    # avg_loglike_mle = np.sum(loglike_train_mle * train_labels) / N_data
+    avg_loglike_mle = np.sum(loglike_train_mle * train_labels) / N_data
     avg_loglike_map = np.sum(loglike_train_map * train_labels) / N_data
 
-    # print("Average log-likelihood for MLE is ", avg_loglike_mle)
+    print("Average log-likelihood for MLE is ", avg_loglike_mle)
     print("Average log-likelihood for MAP is ", avg_loglike_map)
 
     train_accuracy_map = accuracy(loglike_train_map, train_labels)
